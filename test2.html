@@ -68,21 +68,24 @@ button {
 <div class="lloc">
   <div class="segell" id="segell_joanmartell">VISITAT</div>
   <h2>Carrer Joan Martell</h2>
-  <img class="foto" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Catalunya-Reus-Monument-Joan-Prim.JPG">
+  <img class="foto" 
+       src="https://commons.wikimedia.org/wiki/Special:FilePath/Reus_centre.jpg">
   <button onclick="comprovarUbicacio('joanmartell')">Segellar</button>
 </div>
 
 <div class="lloc">
   <div class="segell" id="segell_llibertat">VISITAT</div>
   <h2>Plaça Llibertat</h2>
-  <img class="foto" src="https://www.lovelytravelplans.com/wp-content/uploads/que-ver-en-reus-casa-navas-1170x878-1.jpg">
+  <img class="foto" 
+       src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaça_de_la_Llibertat_Reus.jpg">
   <button onclick="comprovarUbicacio('llibertat')">Segellar</button>
 </div>
 
 <div class="lloc">
   <div class="segell" id="segell_prim">VISITAT</div>
   <h2>Plaça Prim</h2>
-  <img class="foto" src="https://upload.wikimedia.org/wikipedia/commons/1/17/Plaça_del_Prim_Reus.jpg">
+  <img class="foto" 
+       src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaça_del_Prim_Reus.jpg">
   <button onclick="comprovarUbicacio('prim')">Segellar</button>
 </div>
 
@@ -101,11 +104,9 @@ function comprovarUbicacio(lloc) {
     const lonUsuari = posicio.coords.longitude;
 
     const llocs = {
-
       joanmartell: { lat: 41.1589, lon: 1.1088 },
       llibertat: { lat: 41.1553, lon: 1.1069 },
       prim: { lat: 41.1545, lon: 1.1083 }
-
     };
 
     const latLloc = llocs[lloc].lat;
@@ -118,7 +119,7 @@ function comprovarUbicacio(lloc) {
       lonLloc
     );
 
-    if (distancia < 0.8) { // 800 metres
+    if (distancia < 0.8) {
       desbloquejarSegell(lloc);
       alert("✅ Segell desbloquejat!");
     } else {
@@ -156,18 +157,14 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 }
 
 window.onload = function() {
-
   ["joanmartell", "llibertat", "prim"].forEach(function(lloc) {
     if (localStorage.getItem("segell_" + lloc) === "true") {
       document.getElementById("segell_" + lloc).style.display = "flex";
     }
   });
-
 };
 
 </script>
 
 </body>
 </html>
-
-
