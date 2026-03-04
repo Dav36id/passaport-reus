@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
 <meta charset="UTF-8">
-<title>Passaport Digital - Reus</title>
+<title>Passaport Digital - Tavernes</title>
 
 <style>
 body {
@@ -12,7 +12,8 @@ body {
 }
 
 h1 {
-  margin-top: 30px;
+  margin-top: 20px;
+  color: darkred;
 }
 
 .lloc {
@@ -63,35 +64,45 @@ button {
 
 <body>
 
-<h1>📘 Passaport Digital - Reus</h1>
+<h1>Hola Cristina! 👋</h1>
+<h2>📘 Passaport Digital - Tavernes de la Valldigna</h2>
 
+<!-- ESGLÉSIA -->
 <div class="lloc">
-  <div class="segell" id="segell_joanmartell">VISITAT</div>
-  <h2>Carrer Joan Martell</h2>
+  <div class="segell" id="segell_esglesia">VISITAT</div>
+  <h2>Església Sant Josep</h2>
   <img class="foto" 
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/Reus_centre.jpg">
-  <button onclick="comprovarUbicacio('joanmartell')">Segellar</button>
+       src="https://commons.wikimedia.org/wiki/Special:FilePath/Tavernes_de_la_Valldigna_-_Església_de_Sant_Josep.jpg">
+  <button onclick="comprovarUbicacio('esglesia', 'Església Sant Josep')">
+    Segellar
+  </button>
 </div>
 
+<!-- PARC -->
 <div class="lloc">
-  <div class="segell" id="segell_llibertat">VISITAT</div>
-  <h2>Plaça Llibertat</h2>
+  <div class="segell" id="segell_parc">VISITAT</div>
+  <h2>Parc del Cambro</h2>
   <img class="foto" 
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaça_de_la_Llibertat_Reus.jpg">
-  <button onclick="comprovarUbicacio('llibertat')">Segellar</button>
+       src="https://commons.wikimedia.org/wiki/Special:FilePath/Tavernes_de_la_Valldigna_Parc.jpg">
+  <button onclick="comprovarUbicacio('parc', 'Parc del Cambro')">
+    Segellar
+  </button>
 </div>
 
+<!-- MCDONALDS -->
 <div class="lloc">
-  <div class="segell" id="segell_prim">VISITAT</div>
-  <h2>Plaça Prim</h2>
+  <div class="segell" id="segell_mcdonalds">VISITAT</div>
+  <h2>McDonald's</h2>
   <img class="foto" 
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaça_del_Prim_Reus.jpg">
-  <button onclick="comprovarUbicacio('prim')">Segellar</button>
+       src="https://commons.wikimedia.org/wiki/Special:FilePath/McDonald%27s_restaurant.jpg">
+  <button onclick="comprovarUbicacio('mcdonalds', 'McDonald’s')">
+    Segellar
+  </button>
 </div>
 
 <script>
 
-function comprovarUbicacio(lloc) {
+function comprovarUbicacio(clau, nomLloc) {
 
   if (!navigator.geolocation) {
     alert("Geolocalització no compatible");
@@ -104,13 +115,15 @@ function comprovarUbicacio(lloc) {
     const lonUsuari = posicio.coords.longitude;
 
     const llocs = {
-      joanmartell: { lat: 41.1589, lon: 1.1088 },
-      llibertat: { lat: 41.1553, lon: 1.1069 },
-      prim: { lat: 41.1545, lon: 1.1083 }
+
+      esglesia: { lat: 39.0717, lon: -0.2644 },
+      parc: { lat: 39.0724, lon: -0.2660 },
+      mcdonalds: { lat: 39.0742, lon: -0.2685 }
+
     };
 
-    const latLloc = llocs[lloc].lat;
-    const lonLloc = llocs[lloc].lon;
+    const latLloc = llocs[clau].lat;
+    const lonLloc = llocs[clau].lon;
 
     const distancia = calcularDistancia(
       latUsuari,
@@ -119,23 +132,22 @@ function comprovarUbicacio(lloc) {
       lonLloc
     );
 
-    if (distancia < 0.8) {
-      desbloquejarSegell(lloc);
-      alert("✅ Segell desbloquejat!");
+    if (distancia < 0.2) { // 200 metres
+      desbloquejarSegell(clau);
+      alert("✅ Segell desbloquejat a " + nomLloc + "!");
     } else {
-      alert("Has d'estar dins de 800 metres.");
+      alert("❌ No estàs als 200 metres de " + nomLloc);
     }
 
   }, function() {
     alert("No s'ha pogut obtenir la ubicació.");
   });
-
 }
 
-function desbloquejarSegell(lloc) {
-  const segell = document.getElementById("segell_" + lloc);
+function desbloquejarSegell(clau) {
+  const segell = document.getElementById("segell_" + clau);
   segell.style.display = "flex";
-  localStorage.setItem("segell_" + lloc, "true");
+  localStorage.setItem("segell_" + clau, "true");
 }
 
 function calcularDistancia(lat1, lon1, lat2, lon2) {
@@ -157,11 +169,13 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 }
 
 window.onload = function() {
-  ["joanmartell", "llibertat", "prim"].forEach(function(lloc) {
-    if (localStorage.getItem("segell_" + lloc) === "true") {
-      document.getElementById("segell_" + lloc).style.display = "flex";
+
+  ["esglesia", "parc", "mcdonalds"].forEach(function(clau) {
+    if (localStorage.getItem("segell_" + clau) === "true") {
+      document.getElementById("segell_" + clau).style.display = "flex";
     }
   });
+
 };
 
 </script>
