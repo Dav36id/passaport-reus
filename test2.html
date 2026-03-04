@@ -6,7 +6,7 @@
 
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
   background-color: #f4f1e8;
 }
@@ -21,10 +21,11 @@ h1 {
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: white;
-  width: 350px;
+  width: 360px;
+  position: relative;
 }
 
-.lloc img.foto {
+.foto {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -41,9 +42,21 @@ button {
 }
 
 .segell {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   width: 120px;
-  margin-top: 15px;
+  height: 120px;
+  border: 6px solid red;
+  border-radius: 50%;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
   display: none;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-20deg);
+  background-color: rgba(255,0,0,0.1);
 }
 </style>
 </head>
@@ -53,33 +66,24 @@ button {
 <h1>📘 Passaport Digital - Reus</h1>
 
 <div class="lloc">
+  <div class="segell" id="segell_joanmartell">VISITAT</div>
   <h2>Carrer Joan Martell</h2>
-  <img class="foto" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Reus_view.jpg">
+  <img class="foto" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Reus_centre.jpg">
   <button onclick="comprovarUbicacio('joanmartell')">Segellar</button>
-  <br>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Stamp_icon.png"
-       class="segell"
-       id="segell_joanmartell">
 </div>
 
 <div class="lloc">
+  <div class="segell" id="segell_llibertat">VISITAT</div>
   <h2>Plaça Llibertat</h2>
   <img class="foto" src="https://upload.wikimedia.org/wikipedia/commons/3/30/Plaça_de_la_Llibertat_Reus.jpg">
   <button onclick="comprovarUbicacio('llibertat')">Segellar</button>
-  <br>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Stamp_icon.png"
-       class="segell"
-       id="segell_llibertat">
 </div>
 
 <div class="lloc">
+  <div class="segell" id="segell_prim">VISITAT</div>
   <h2>Plaça Prim</h2>
   <img class="foto" src="https://upload.wikimedia.org/wikipedia/commons/1/17/Plaça_del_Prim_Reus.jpg">
   <button onclick="comprovarUbicacio('prim')">Segellar</button>
-  <br>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Stamp_icon.png"
-       class="segell"
-       id="segell_prim">
 </div>
 
 <script>
@@ -98,20 +102,9 @@ function comprovarUbicacio(lloc) {
 
     const llocs = {
 
-      joanmartell: {
-        lat: 41.1589,
-        lon: 1.1088
-      },
-
-      llibertat: {
-        lat: 41.1553,
-        lon: 1.1069
-      },
-
-      prim: {
-        lat: 41.1545,
-        lon: 1.1083
-      }
+      joanmartell: { lat: 41.1589, lon: 1.1088 },
+      llibertat: { lat: 41.1553, lon: 1.1069 },
+      prim: { lat: 41.1545, lon: 1.1083 }
 
     };
 
@@ -126,14 +119,22 @@ function comprovarUbicacio(lloc) {
     );
 
     if (distancia < 0.8) { // 800 metres
-      document.getElementById("segell_" + lloc).style.display = "block";
-      localStorage.setItem("segell_" + lloc, "true");
-      alert("Segell desbloquejat!");
+      desbloquejarSegell(lloc);
+      alert("✅ Segell desbloquejat!");
     } else {
       alert("Has d'estar dins de 800 metres.");
     }
 
+  }, function() {
+    alert("No s'ha pogut obtenir la ubicació.");
   });
+
+}
+
+function desbloquejarSegell(lloc) {
+  const segell = document.getElementById("segell_" + lloc);
+  segell.style.display = "flex";
+  localStorage.setItem("segell_" + lloc, "true");
 }
 
 function calcularDistancia(lat1, lon1, lat2, lon2) {
@@ -158,7 +159,7 @@ window.onload = function() {
 
   ["joanmartell", "llibertat", "prim"].forEach(function(lloc) {
     if (localStorage.getItem("segell_" + lloc) === "true") {
-      document.getElementById("segell_" + lloc).style.display = "block";
+      document.getElementById("segell_" + lloc).style.display = "flex";
     }
   });
 
