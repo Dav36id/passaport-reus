@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
 <meta charset="UTF-8">
-<title>Falla Prado</title>
+<title>Passaport Faller</title>
 
 <style>
 
@@ -11,16 +11,16 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, sans-serif;
+font-family:Arial;
 margin:0;
-text-align:center;
 background:#f4f1e8;
+text-align:center;
 }
 
 /* LOGO */
 
 .logo{
-width:140px;
+width:130px;
 margin:30px auto 10px auto;
 display:block;
 }
@@ -29,38 +29,42 @@ display:block;
 
 nav{
 background:white;
+padding:15px;
 border-top:2px solid #ddd;
 border-bottom:2px solid #ddd;
-padding:15px 0;
 position:sticky;
 top:0;
+z-index:100;
 }
 
 nav ul{
-list-style:none;
-padding:0;
-margin:0;
 display:flex;
 justify-content:center;
 gap:40px;
+list-style:none;
+padding:0;
+margin:0;
 }
 
 nav a{
 text-decoration:none;
 font-weight:bold;
-font-size:18px;
 color:darkred;
+font-size:18px;
 }
 
-nav a:hover{
-text-decoration:underline;
+/* CONTADOR */
+
+.contador{
+margin:20px;
+font-size:22px;
+font-weight:bold;
 }
 
 /* SECCIONS */
 
 section{
-padding:120px 20px;
-min-height:500px;
+padding:60px 20px;
 }
 
 #Fallapradoenroig{
@@ -79,9 +83,60 @@ background:#d6ffd9;
 background:#f0e0c9;
 }
 
-h2{
-font-size:32px;
-margin-bottom:20px;
+/* TARGETES */
+
+.llocs{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.lloc{
+background:white;
+width:260px;
+border-radius:12px;
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+position:relative;
+}
+
+.lloc img{
+width:100%;
+border-radius:8px;
+}
+
+.lloc h3{
+margin:10px 0;
+}
+
+button{
+padding:10px 15px;
+border:none;
+background:darkred;
+color:white;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}
+
+/* SEGELL */
+
+.segell{
+position:absolute;
+top:15px;
+right:15px;
+width:100px;
+height:100px;
+border:5px solid red;
+border-radius:50%;
+color:red;
+font-weight:bold;
+display:none;
+align-items:center;
+justify-content:center;
+transform:rotate(-20deg);
+background:rgba(255,0,0,0.1);
 }
 
 </style>
@@ -89,48 +144,201 @@ margin-bottom:20px;
 
 <body>
 
-<!-- LOGO -->
 <img class="logo" src="https://dav36id.github.io/passaport-reus/escut.png">
 
-<!-- MENU -->
 <nav>
 <ul>
-
 <li><a href="#Fallapradoenroig">#Fallapradoenroig</a></li>
 <li><a href="#Fallapradoenblau">#Fallapradoenblau</a></li>
 <li><a href="#Fallapradoenverd">#Fallapradoenverd</a></li>
 <li><a href="#Fallapradoenmarro">#Fallapradoenmarro</a></li>
-
 </ul>
 </nav>
 
-<!-- SECCIÓ 1 -->
+<div class="contador">
+Segells aconseguits: <span id="contador">0</span> / 6
+</div>
+
+<!-- SECCIÓ ROJA -->
 
 <section id="Fallapradoenroig">
-<h2>#Fallapradoenroig</h2>
-<p>Contingut d'aquesta secció.</p>
-</section>
 
-<!-- SECCIÓ 2 -->
+<h2>#Fallapradoenroig</h2>
+
+<div class="llocs">
+
+<div class="lloc">
+<div class="segell" id="segell_prado">VISITAT</div>
+<h3>Falla Prado</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('prado','Falla Prado')">Segellar</button>
+</div>
+
+<div class="lloc">
+<div class="segell" id="segell_passeig">VISITAT</div>
+<h3>Falla Passeig</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('passeig','Falla Passeig')">Segellar</button>
+</div>
+
+<div class="lloc">
+<div class="segell" id="segell_dula">VISITAT</div>
+<h3>Falla La Dula</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('dula','Falla La Dula')">Segellar</button>
+</div>
+
+<div class="lloc">
+<div class="segell" id="segell_cambro">VISITAT</div>
+<h3>Falla Cambro</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('cambro','Falla Cambro')">Segellar</button>
+</div>
+
+<div class="lloc">
+<div class="segell" id="segell_via">VISITAT</div>
+<h3>Falla La Via</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('via','Falla La Via')">Segellar</button>
+</div>
+
+<div class="lloc">
+<div class="segell" id="segell_portal">VISITAT</div>
+<h3>Falla Portal de Valldigna</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('portal','Falla Portal de Valldigna')">Segellar</button>
+</div>
+
+</div>
+
+</section>
 
 <section id="Fallapradoenblau">
 <h2>#Fallapradoenblau</h2>
-<p>Contingut d'aquesta secció.</p>
 </section>
-
-<!-- SECCIÓ 3 -->
 
 <section id="Fallapradoenverd">
 <h2>#Fallapradoenverd</h2>
-<p>Contingut d'aquesta secció.</p>
 </section>
-
-<!-- SECCIÓ 4 -->
 
 <section id="Fallapradoenmarro">
 <h2>#Fallapradoenmarro</h2>
-<p>Contingut d'aquesta secció.</p>
 </section>
+
+<script>
+
+const llocs={
+
+prado:{lat:39.0723,lon:-0.2675},
+passeig:{lat:39.0720,lon:-0.2668},
+dula:{lat:39.0709,lon:-0.2659},
+cambro:{lat:39.0726,lon:-0.2660},
+via:{lat:39.0716,lon:-0.2667},
+portal:{lat:39.0710,lon:-0.2652}
+
+};
+
+function comprovarUbicacio(clau,nom){
+
+if(!navigator.geolocation){
+alert("Geolocalització no compatible");
+return;
+}
+
+navigator.geolocation.getCurrentPosition(function(pos){
+
+const latU=pos.coords.latitude;
+const lonU=pos.coords.longitude;
+
+const latL=llocs[clau].lat;
+const lonL=llocs[clau].lon;
+
+const dist=calcularDistancia(latU,lonU,latL,lonL);
+
+if(dist<0.2){
+
+desbloquejarSegell(clau);
+alert("✅ Segell desbloquejat a "+nom);
+
+}else{
+
+alert("❌ Has d'estar a menys de 200 metres");
+
+}
+
+});
+
+}
+
+function desbloquejarSegell(clau){
+
+const segell=document.getElementById("segell_"+clau);
+
+if(segell.style.display!="flex"){
+
+segell.style.display="flex";
+
+localStorage.setItem("segell_"+clau,"true");
+
+actualitzarContador();
+
+}
+
+}
+
+function calcularDistancia(lat1,lon1,lat2,lon2){
+
+const R=6371;
+
+const dLat=(lat2-lat1)*Math.PI/180;
+const dLon=(lon2-lon1)*Math.PI/180;
+
+const a=
+Math.sin(dLat/2)*Math.sin(dLat/2)+
+Math.cos(lat1*Math.PI/180)*
+Math.cos(lat2*Math.PI/180)*
+Math.sin(dLon/2)*
+Math.sin(dLon/2);
+
+const c=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+
+return R*c;
+
+}
+
+function actualitzarContador(){
+
+let total=0;
+
+for(let clau in llocs){
+
+if(localStorage.getItem("segell_"+clau)=="true"){
+total++;
+}
+
+}
+
+document.getElementById("contador").innerText=total;
+
+}
+
+window.onload=function(){
+
+for(let clau in llocs){
+
+if(localStorage.getItem("segell_"+clau)=="true"){
+
+document.getElementById("segell_"+clau).style.display="flex";
+
+}
+
+}
+
+actualitzarContador();
+
+}
+
+</script>
 
 </body>
 </html>
