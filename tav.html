@@ -2,184 +2,135 @@
 <html lang="ca">
 <head>
 <meta charset="UTF-8">
-<title>Passaport Digital - Tavernes</title>
+<title>Falla Prado</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f1e8;
+
+html{
+scroll-behavior:smooth;
 }
 
-h1 {
-  margin-top: 20px;
-  color: darkred;
+body{
+font-family:Arial, sans-serif;
+margin:0;
+text-align:center;
+background:#f4f1e8;
 }
 
-.lloc {
-  margin: 40px auto;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  background-color: white;
-  width: 360px;
-  position: relative;
+/* LOGO */
+
+.logo{
+width:140px;
+margin:30px auto 10px auto;
+display:block;
 }
 
-.foto {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+/* MENU */
+
+nav{
+background:white;
+border-top:2px solid #ddd;
+border-bottom:2px solid #ddd;
+padding:15px 0;
+position:sticky;
+top:0;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 14px;
-  background-color: darkred;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
+nav ul{
+list-style:none;
+padding:0;
+margin:0;
+display:flex;
+justify-content:center;
+gap:40px;
 }
 
-.segell {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 120px;
-  height: 120px;
-  border: 6px solid red;
-  border-radius: 50%;
-  color: red;
-  font-weight: bold;
-  font-size: 18px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-20deg);
-  background-color: rgba(255,0,0,0.1);
+nav a{
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+color:darkred;
 }
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* SECCIONS */
+
+section{
+padding:120px 20px;
+min-height:500px;
+}
+
+#Fallapradoenroig{
+background:#ffd6d6;
+}
+
+#Fallapradoenblau{
+background:#d6e6ff;
+}
+
+#Fallapradoenverd{
+background:#d6ffd9;
+}
+
+#Fallapradoenmarro{
+background:#f0e0c9;
+}
+
+h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>Hola Cristina! 👋</h1>
-<h2>📘 Passaport Digital - Tavernes de la Valldigna</h2>
+<!-- LOGO -->
+<img class="logo" src="https://via.placeholder.com/200x120.png?text=LOGO">
 
-<!-- ESGLÉSIA -->
-<div class="lloc">
-  <div class="segell" id="segell_esglesia">VISITAT</div>
-  <h2>Església Sant Josep</h2>
-  <img class="foto" 
-       src="https://www.visitatavernes.es/wp-content/uploads/2021/05/DSC07762.jpg">
-  <button onclick="comprovarUbicacio('esglesia', 'Església Sant Josep')">
-    Segellar
-  </button>
-</div>
+<!-- MENU -->
+<nav>
+<ul>
 
-<!-- PARC -->
-<div class="lloc">
-  <div class="segell" id="segell_parc">VISITAT</div>
-  <h2>Parc del Cambro</h2>
-  <img class="foto" 
-       src="https://elcircodechloe.es/wp-content/uploads/AF1QipNWuV1ItY-nyOj3zN6PR_SK2_WvEZbPe0O62Kxhw426-h240-k-no.jpeg">
-  <button onclick="comprovarUbicacio('parc', 'Parc del Cambro')">
-    Segellar
-  </button>
-</div>
+<li><a href="#Fallapradoenroig">#Fallapradoenroig</a></li>
+<li><a href="#Fallapradoenblau">#Fallapradoenblau</a></li>
+<li><a href="#Fallapradoenverd">#Fallapradoenverd</a></li>
+<li><a href="#Fallapradoenmarro">#Fallapradoenmarro</a></li>
 
-<!-- MCDONALDS -->
-<div class="lloc">
-  <div class="segell" id="segell_mcdonalds">VISITAT</div>
-  <h2>McDonald's</h2>
-  <img class="foto" 
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/McDonald%27s_restaurant.jpg">
-  <button onclick="comprovarUbicacio('mcdonalds', 'McDonald’s')">
-    Segellar
-  </button>
-</div>
+</ul>
+</nav>
 
-<script>
+<!-- SECCIÓ 1 -->
 
-function comprovarUbicacio(clau, nomLloc) {
+<section id="Fallapradoenroig">
+<h2>#Fallapradoenroig</h2>
+<p>Contingut d'aquesta secció.</p>
+</section>
 
-  if (!navigator.geolocation) {
-    alert("Geolocalització no compatible");
-    return;
-  }
+<!-- SECCIÓ 2 -->
 
-  navigator.geolocation.getCurrentPosition(function(posicio) {
+<section id="Fallapradoenblau">
+<h2>#Fallapradoenblau</h2>
+<p>Contingut d'aquesta secció.</p>
+</section>
 
-    const latUsuari = posicio.coords.latitude;
-    const lonUsuari = posicio.coords.longitude;
+<!-- SECCIÓ 3 -->
 
-    const llocs = {
+<section id="Fallapradoenverd">
+<h2>#Fallapradoenverd</h2>
+<p>Contingut d'aquesta secció.</p>
+</section>
 
-      esglesia: { lat: 39.0717, lon: -0.2644 },
-      parc: { lat: 39.0724, lon: -0.2660 },
-      mcdonalds: { lat: 39.0742, lon: -0.2685 }
+<!-- SECCIÓ 4 -->
 
-    };
-
-    const latLloc = llocs[clau].lat;
-    const lonLloc = llocs[clau].lon;
-
-    const distancia = calcularDistancia(
-      latUsuari,
-      lonUsuari,
-      latLloc,
-      lonLloc
-    );
-
-    if (distancia < 0.2) { // 200 metres
-      desbloquejarSegell(clau);
-      alert("✅ Segell desbloquejat a " + nomLloc + "!");
-    } else {
-      alert("❌ No estàs als 200 metres de " + nomLloc);
-    }
-
-  }, function() {
-    alert("No s'ha pogut obtenir la ubicació.");
-  });
-}
-
-function desbloquejarSegell(clau) {
-  const segell = document.getElementById("segell_" + clau);
-  segell.style.display = "flex";
-  localStorage.setItem("segell_" + clau, "true");
-}
-
-function calcularDistancia(lat1, lon1, lat2, lon2) {
-
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-
-  const a =
-    Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(lat1 * Math.PI/180) *
-    Math.cos(lat2 * Math.PI/180) *
-    Math.sin(dLon/2) *
-    Math.sin(dLon/2);
-
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-  return R * c;
-}
-
-window.onload = function() {
-
-  ["esglesia", "parc", "mcdonalds"].forEach(function(clau) {
-    if (localStorage.getItem("segell_" + clau) === "true") {
-      document.getElementById("segell_" + clau).style.display = "flex";
-    }
-  });
-
-};
-
-</script>
+<section id="Fallapradoenmarro">
+<h2>#Fallapradoenmarro</h2>
+<p>Contingut d'aquesta secció.</p>
+</section>
 
 </body>
-
 </html>
