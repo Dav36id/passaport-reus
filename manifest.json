@@ -1,0 +1,21 @@
+{
+  "name": "Passaport Tavernes",
+  "short_name": "Passaport",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#8b0000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://dav36id.github.io/passaport-reus/escut.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://dav36id.github.io/passaport-reus/escut.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
