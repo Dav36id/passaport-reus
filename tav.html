@@ -6,9 +6,7 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 font-family:Arial;
@@ -17,15 +15,11 @@ background:#f4f1e8;
 text-align:center;
 }
 
-/* LOGO */
-
 .logo{
 width:130px;
-margin:30px auto 10px auto;
+margin:30px auto;
 display:block;
 }
-
-/* MENU */
 
 nav{
 background:white;
@@ -53,37 +47,20 @@ color:darkred;
 font-size:18px;
 }
 
-/* CONTADOR */
-
 .contador{
 margin:20px;
 font-size:22px;
 font-weight:bold;
 }
 
-/* SECCIONS */
-
 section{
 padding:60px 20px;
 }
 
-#Fallapradoenroig{
-background:#ffd6d6;
-}
-
-#Fallapradoenblau{
-background:#d6e6ff;
-}
-
-#Fallapradoenverd{
-background:#d6ffd9;
-}
-
-#Fallapradoenmarro{
-background:#f0e0c9;
-}
-
-/* TARGETES */
+#Fallapradoenroig{background:#ffd6d6;}
+#Fallapradoenblau{background:#d6e6ff;}
+#Fallapradoenverd{background:#d6ffd9;}
+#Fallapradoenmarro{background:#f0e0c9;}
 
 .llocs{
 display:flex;
@@ -106,10 +83,6 @@ width:100%;
 border-radius:8px;
 }
 
-.lloc h3{
-margin:10px 0;
-}
-
 button{
 padding:10px 15px;
 border:none;
@@ -120,14 +93,12 @@ cursor:pointer;
 border-radius:6px;
 }
 
-/* SEGELL */
-
 .segell{
 position:absolute;
 top:15px;
 right:15px;
-width:100px;
-height:100px;
+width:90px;
+height:90px;
 border:5px solid red;
 border-radius:50%;
 color:red;
@@ -156,74 +127,165 @@ background:rgba(255,0,0,0.1);
 </nav>
 
 <div class="contador">
-Segells aconseguits: <span id="contador">0</span> / 6
+Segells aconseguits: <span id="contador">0</span> / 24
 </div>
 
-<!-- SECCIÓ ROJA -->
 
+<!-- ROIG -->
 <section id="Fallapradoenroig">
-
 <h2>#Fallapradoenroig</h2>
-
 <div class="llocs">
 
-<div class="lloc">
-<div class="segell" id="segell_prado">VISITAT</div>
+<div class="lloc"><div class="segell" id="segell_prado">VISITAT</div>
 <h3>Falla Prado</h3>
 <img src="https://via.placeholder.com/250x150">
-<button onclick="comprovarUbicacio('prado','Falla Prado')">Segellar</button>
-</div>
+<button onclick="comprovarUbicacio('prado','Falla Prado')">Segellar</button></div>
 
-<div class="lloc">
-<div class="segell" id="segell_passeig">VISITAT</div>
+<div class="lloc"><div class="segell" id="segell_passeig">VISITAT</div>
 <h3>Falla Passeig</h3>
 <img src="https://via.placeholder.com/250x150">
-<button onclick="comprovarUbicacio('passeig','Falla Passeig')">Segellar</button>
-</div>
+<button onclick="comprovarUbicacio('passeig','Falla Passeig')">Segellar</button></div>
 
-<div class="lloc">
-<div class="segell" id="segell_dula">VISITAT</div>
+<div class="lloc"><div class="segell" id="segell_dula">VISITAT</div>
 <h3>Falla La Dula</h3>
 <img src="https://via.placeholder.com/250x150">
-<button onclick="comprovarUbicacio('dula','Falla La Dula')">Segellar</button>
-</div>
+<button onclick="comprovarUbicacio('dula','Falla La Dula')">Segellar</button></div>
 
-<div class="lloc">
-<div class="segell" id="segell_cambro">VISITAT</div>
+<div class="lloc"><div class="segell" id="segell_cambro">VISITAT</div>
 <h3>Falla Cambro</h3>
 <img src="https://via.placeholder.com/250x150">
-<button onclick="comprovarUbicacio('cambro','Falla Cambro')">Segellar</button>
-</div>
+<button onclick="comprovarUbicacio('cambro','Falla Cambro')">Segellar</button></div>
 
-<div class="lloc">
-<div class="segell" id="segell_via">VISITAT</div>
+<div class="lloc"><div class="segell" id="segell_via">VISITAT</div>
 <h3>Falla La Via</h3>
 <img src="https://via.placeholder.com/250x150">
-<button onclick="comprovarUbicacio('via','Falla La Via')">Segellar</button>
-</div>
+<button onclick="comprovarUbicacio('via','Falla La Via')">Segellar</button></div>
 
-<div class="lloc">
-<div class="segell" id="segell_portal">VISITAT</div>
+<div class="lloc"><div class="segell" id="segell_portal">VISITAT</div>
 <h3>Falla Portal de Valldigna</h3>
 <img src="https://via.placeholder.com/250x150">
-<button onclick="comprovarUbicacio('portal','Falla Portal de Valldigna')">Segellar</button>
-</div>
+<button onclick="comprovarUbicacio('portal','Falla Portal de Valldigna')">Segellar</button></div>
 
 </div>
-
 </section>
 
+
+<!-- BLAU -->
 <section id="Fallapradoenblau">
 <h2>#Fallapradoenblau</h2>
+<div class="llocs">
+
+<div class="lloc"><div class="segell" id="segell_platja">VISITAT</div>
+<h3>Platja de Tavernes</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('platja','Platja Tavernes')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_ullal">VISITAT</div>
+<h3>Ullal Gran</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('ullal','Ullal Gran')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_riuvaca">VISITAT</div>
+<h3>Riu Vaca</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('riuvaca','Riu Vaca')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_clot">VISITAT</div>
+<h3>Clot de la Font</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('clot','Clot de la Font')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_goleta">VISITAT</div>
+<h3>Llac de la Goleta</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('goleta','Llac Goleta')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_cantus">VISITAT</div>
+<h3>Fontetes de Cantus</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('cantus','Fontetes Cantus')">Segellar</button></div>
+
+</div>
 </section>
 
+
+<!-- VERD -->
 <section id="Fallapradoenverd">
 <h2>#Fallapradoenverd</h2>
+<div class="llocs">
+
+<div class="lloc"><div class="segell" id="segell_creus">VISITAT</div>
+<h3>Alt de les Creus</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('creus','Alt de les Creus')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_esther">VISITAT</div>
+<h3>Sendeta d'Esther</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('esther','Sendeta Esther')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_mirador">VISITAT</div>
+<h3>Mirador de la Valldigna</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('mirador','Mirador Valldigna')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_cadireta">VISITAT</div>
+<h3>La Cadireta</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('cadireta','Cadireta')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_dunar">VISITAT</div>
+<h3>Ecosistema Dunar</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('dunar','Ecosistema Dunar')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_viaverda">VISITAT</div>
+<h3>Via Verda</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('viaverda','Via Verda')">Segellar</button></div>
+
+</div>
 </section>
 
+
+<!-- MARRO -->
 <section id="Fallapradoenmarro">
 <h2>#Fallapradoenmarro</h2>
+<div class="llocs">
+
+<div class="lloc"><div class="segell" id="segell_esglesia">VISITAT</div>
+<h3>Església Sant Pere</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('esglesia','Església Sant Pere')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_ajuntament">VISITAT</div>
+<h3>Ajuntament</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('ajuntament','Ajuntament')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_torre">VISITAT</div>
+<h3>Torre Guaita</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('torre','Torre Guaita')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_mercat">VISITAT</div>
+<h3>Mercat Municipal</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('mercat','Mercat Municipal')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_ermita">VISITAT</div>
+<h3>Ermita Sant Llorenç</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('ermita','Ermita Sant Llorenç')">Segellar</button></div>
+
+<div class="lloc"><div class="segell" id="segell_calvari">VISITAT</div>
+<h3>El Calvari</h3>
+<img src="https://via.placeholder.com/250x150">
+<button onclick="comprovarUbicacio('calvari','Calvari')">Segellar</button></div>
+
+</div>
 </section>
+
 
 <script>
 
@@ -234,16 +296,27 @@ passeig:{lat:39.0720,lon:-0.2668},
 dula:{lat:39.0709,lon:-0.2659},
 cambro:{lat:39.0726,lon:-0.2660},
 via:{lat:39.0716,lon:-0.2667},
-portal:{lat:39.0710,lon:-0.2652}
+portal:{lat:39.0710,lon:-0.2652},
+
+platja:{lat:39.08836,lon:-0.21476},
+ullal:{lat:39.08133,lon:-0.24136},
+riuvaca:{lat:39.06692,lon:-0.27069},
+clot:{lat:39.05689,lon:-0.27455},
+goleta:{lat:39.10264,lon:-0.22233},
+cantus:{lat:39.10264,lon:-0.22233},
+
+creus:{lat:39.07945,lon:-0.27773},
+esther:{lat:39.07945,lon:-0.27773},
+mirador:{lat:39.08398,lon:-0.24858},
+cadireta:{lat:39.05726,lon:-0.25763},
+dunar:{lat:39.07711,lon:-0.20979},
+viaverda:{lat:39.06961,lon:-0.28339},
+
+calvari:{lat:39.07498,lon:-0.26909}
 
 };
 
 function comprovarUbicacio(clau,nom){
-
-if(!navigator.geolocation){
-alert("Geolocalització no compatible");
-return;
-}
 
 navigator.geolocation.getCurrentPosition(function(pos){
 
@@ -256,14 +329,10 @@ const lonL=llocs[clau].lon;
 const dist=calcularDistancia(latU,lonU,latL,lonL);
 
 if(dist<0.2){
-
 desbloquejarSegell(clau);
 alert("✅ Segell desbloquejat a "+nom);
-
 }else{
-
 alert("❌ Has d'estar a menys de 200 metres");
-
 }
 
 });
@@ -275,13 +344,9 @@ function desbloquejarSegell(clau){
 const segell=document.getElementById("segell_"+clau);
 
 if(segell.style.display!="flex"){
-
 segell.style.display="flex";
-
 localStorage.setItem("segell_"+clau,"true");
-
 actualitzarContador();
-
 }
 
 }
@@ -297,8 +362,7 @@ const a=
 Math.sin(dLat/2)*Math.sin(dLat/2)+
 Math.cos(lat1*Math.PI/180)*
 Math.cos(lat2*Math.PI/180)*
-Math.sin(dLon/2)*
-Math.sin(dLon/2);
+Math.sin(dLon/2)*Math.sin(dLon/2);
 
 const c=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
 
@@ -310,12 +374,8 @@ function actualitzarContador(){
 
 let total=0;
 
-for(let clau in llocs){
-
-if(localStorage.getItem("segell_"+clau)=="true"){
-total++;
-}
-
+for(let key in localStorage){
+if(key.startsWith("segell_")) total++;
 }
 
 document.getElementById("contador").innerText=total;
@@ -324,12 +384,12 @@ document.getElementById("contador").innerText=total;
 
 window.onload=function(){
 
-for(let clau in llocs){
+for(let key in localStorage){
 
-if(localStorage.getItem("segell_"+clau)=="true"){
-
-document.getElementById("segell_"+clau).style.display="flex";
-
+if(key.startsWith("segell_")){
+const id=key.replace("segell_","");
+const el=document.getElementById("segell_"+id);
+if(el) el.style.display="flex";
 }
 
 }
